@@ -52,7 +52,8 @@ const PhotoDisplay = ({ images, userId }) => {
     const formData = new FormData();
     formData.append("image", file);
     const data = { userId, image: formData };
-    dispatch(uploadImage(data));
+    toast.success("You have View only Credentials");
+    // dispatch(uploadImage(data));
     // for (var pair of formData.entries()) {
     //   console.log(pair[0] + ": " + pair[1]);
 

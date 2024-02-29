@@ -43,7 +43,7 @@ export const userLoginSlice = createSlice({
       state.loading = true;
     });
     builder.addCase(loginUser.fulfilled, (state, action) => {
-      console.log(action.payload);
+      // console.log(action.payload);
       state.loading = false;
       state.user = action.payload.validUser;
       state.isAuthenticated = true;

@@ -8,27 +8,27 @@ import "../styles/Dashboard.css";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutUser } from "../redux/auth/logout-slice";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { getUserData } from "../redux/query/user-slice";
 const Dashboard = () => {
   const { success, message, error } = useSelector((state) => state.userLogout);
   const { user } = useSelector((state) => state.userLogin);
-  const { loading, data } = useSelector((state) => state.userData);
+  const { data } = useSelector((state) => state.userData);
   const dispatch = useDispatch();
   const { authUser, setIsLoggedIn, setAuthUser } = useAuth();
   const { activeMenu } = useMenuContext();
   const [mainContentWidth, setMainContentWidth] = useState("calc(100%-288px)"); // Initial width calculation
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const userId = user?._id;
-  console.log(userId);
+  // console.log(userId);
 
-  useEffect(() => {
-    console.log("object");
-  }, []);
+  // useEffect(() => {
+  //   console.log("object");
+  // }, []);
 
   useEffect(() => {
     dispatch(getUserData(userId));
-    console.log("object");
+    // console.log("object");
     setIsLoggedIn(true);
     setAuthUser(user?.username);
     const handleResize = () => {
@@ -64,7 +64,7 @@ const Dashboard = () => {
     dispatch(logoutUser());
   };
 
-  console.log(data);
+  // console.log(data);
   return (
     <>
       {data.images && (

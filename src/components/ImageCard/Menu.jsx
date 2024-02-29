@@ -52,7 +52,8 @@ export default function LongMenu({ previewImage, imgId }) {
   const handleDeleteClick = () => {
     setAnchorEl(null);
     const data = { userId: user._id, imgId };
-    dispatch(deleteImage(data));
+    // dispatch(deleteImage(data));
+    toast.success("You have View only Credentials");
   };
   const handlerImagePreviewClick = () => {
     setAnchorEl(null);

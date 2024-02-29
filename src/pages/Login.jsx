@@ -36,7 +36,8 @@ const Login = () => {
 
   const handleClick = async (e) => {
     e.preventDefault();
-    dispatch(loginUser(credentials));
+    // console.log(credentials);
+    dispatch(loginUser({ email: "test@test.com", password: "1111" }));
     // console.log(credentials);
   };
   return (
@@ -60,6 +61,7 @@ const Login = () => {
                     required
                     id="email"
                     onChange={handleChange}
+                    value="test@test.com"
                   />
                 </FormGroup>
                 <FormGroup>
@@ -69,14 +71,16 @@ const Login = () => {
                     required
                     id="password"
                     onChange={handleChange}
+                    value="1111"
                   />
                 </FormGroup>
                 <Button className="btn secondary__btn auth__btn" type="submit">
                   Login
                 </Button>
-                <p>
+                {/* <p>
                   Don't have an account? <Link to="/register">Create </Link>
-                </p>
+                </p> */}
+                <p>This account is only to view</p>
               </Form>
             </div>
           </div>
